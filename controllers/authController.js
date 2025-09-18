@@ -6,7 +6,7 @@ import Funcionario from "../models/funcionario.js"
 import enviarCorreo from "../utils/mailer.js"
 import passwordGenerado from "../utils/generarPassword.js"
 
-export const Register = async (req,res)=> {
+export const register = async (req,res)=> {
     const {username, password, correo, identificacion, 
         nombre, apellido, rol, aprFicha, aprPrograma, funCargo}=req.body
     try{
