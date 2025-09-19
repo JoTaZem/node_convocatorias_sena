@@ -6,7 +6,7 @@ import sequelize from "./config/database.js"
 import authRoutes from "./routes/authRoutes.js"
 import convocatoriaRoutes from "./routes/convocatoriaRoutes.js"
 import postulacionRoutes from "./routes/poatulacionRoutes.js"
-import resultadoPostulacionRoutes from "./routes/resultadoPostulacionRoutes.js"
+//import resultadoPostulacionRoutes from "./routes/resultadoPostulacionRoutes.js"
 import aprendizRoutes from "./routes/aprendizRoutes.js"
 import funcionarioRoutes from "./routes/funcionarioRoutes.js"
 //models
@@ -16,7 +16,7 @@ import Convocatoria from "./models/convocatoria.js"
 import Funcionario from "./models/funcionario.js"
 import Aprendiz from "./models/aprendiz.js"
 import Postulacion from "./models/postulacion.js"
-import ResultadoPostulacion from "./models/resultadoPostulacion.js"
+//import ResultadoPostulacion from "./models/resultadoPostulacion.js"
 
 const models = {
     Usuario,TipoConvocatoria,Convocatoria,Funcionario,
