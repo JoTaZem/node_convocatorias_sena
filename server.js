@@ -45,7 +45,7 @@ app.use("/uploads",express.static("uploads"))
 app.use("/api/auth",authRoutes)
 app.use("/api/convocatorias",convocatoriaRoutes)
 app.use("/api/postulaciones",postulacionRoutes)
-app.use("/api/resultados",resultadoPostulacionRoutes)
+//app.use("/api/resultados",resultadoPostulacionRoutes)
 app.use("/api/aprendices",aprendizRoutes)
 app.use("/api/funcionarios",funcionarioRoutes)
 
