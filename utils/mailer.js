@@ -8,7 +8,6 @@ const transporter = createTransport({
         pass: process.env.EMAIL_PASS    
     }
 })
-
 const enviarCorreo = async (to,subject,html)=>{
     awwait.transporter.sendMail({
         from: process.env.EMAIL_USER,
