@@ -1,5 +1,5 @@
 import { Model, DataTypes, ENUM } from "sequelize"
-import sequelize from "../config/database"
+import sequelize from "../config/database.js"
 
 class Usuario extends Model { 
     static associate(models){

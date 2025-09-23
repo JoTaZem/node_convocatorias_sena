@@ -4,6 +4,7 @@ import sequelize from '../config/database.js'
 class Aprendiz extends Model {
   static associate(models) {
     this.belongsTo(models.Usuario, { foreignKey: 'aprUsuarioId', as: 'usuario' })
+    this.hasMany (models.Postulacion,{foreignKey:'posConvocatoriaId', as:'postulaciones'})
   
   }
 }

@@ -5,10 +5,10 @@ import sequelize from "./config/database.js"
 //rutas
 import authRoutes from "./routes/authRoutes.js"
 import convocatoriaRoutes from "./routes/convocatoriaRoutes.js"
-import postulacionRoutes from "./routes/poatulacionRoutes.js"
+import postulacionRoutes from "./routes/postulacionRoutes.js"
 //import resultadoPostulacionRoutes from "./routes/resultadoPostulacionRoutes.js"
-import aprendizRoutes from "./routes/aprendizRoutes.js"
-import funcionarioRoutes from "./routes/funcionarioRoutes.js"
+//import aprendizRoutes from "./routes/aprendizRoutes.js"
+//import funcionarioRoutes from "./routes/funcionarioRoutes.js"
 //models
 import Usuario from "./models/usuario.js"
 import TipoConvocatoria from "./models/tipoConvocatoria.js"
@@ -20,7 +20,7 @@ import Postulacion from "./models/postulacion.js"
 
 const models = {
     Usuario,TipoConvocatoria,Convocatoria,Funcionario,
-    Aprendiz,Postulacion,ResultadoPostulacion
+    Aprendiz,Postulacion,/*ResultadoPostulacion*/
 }
 
 Object.keys(models).forEach(modelName =>{
@@ -46,8 +46,8 @@ app.use("/api/auth",authRoutes)
 app.use("/api/convocatorias",convocatoriaRoutes)
 app.use("/api/postulaciones",postulacionRoutes)
 //app.use("/api/resultados",resultadoPostulacionRoutes)
-app.use("/api/aprendices",aprendizRoutes)
-app.use("/api/funcionarios",funcionarioRoutes)
+//app.use("/api/aprendices",aprendizRoutes)
+//app.use("/api/funcionarios",funcionarioRoutes)
 
 const PORT =  process.env.PORT || 3000
 

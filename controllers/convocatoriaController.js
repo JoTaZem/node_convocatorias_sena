@@ -1,5 +1,5 @@
-import Convocatoria from "../models/convocatoria";
-import TipoConvocatoria from "../models/tipoConvocatoria";
+import Convocatoria from "../models/convocatoria.js";
+import TipoConvocatoria from "../models/tipoConvocatoria.js";
 
 export const createConvocatoria = async(req,res)=>{
     try {

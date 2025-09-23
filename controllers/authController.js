@@ -8,7 +8,7 @@ import passwordGenerado from "../utils/generarPassword.js"
 
 export const register = async (req,res)=> {
     const {username, password, correo, identificacion, 
-        nombre, apellido, rol, aprFicha, aprPrograma, funCargo}=req.body
+nombre, apellido, rol, aprFicha, aprPrograma, funCargo}=req.body
     try{
         const existingUser = await Usuario.findOne({where : {username}})
         if(existingUser){
@@ -30,7 +30,7 @@ export const register = async (req,res)=> {
                 aprUsuarioId: newUser.id,
                 aprFicha, aprPrograma
             })
-        }if(rol==="Funcionario" || rol==="Lider"){
+        }else if(rol==="Funcionario" || rol==="Lider"){
             await Funcionario.create({
                 funUsuarioId: newUser.id,
                 funCargo
@@ -40,7 +40,7 @@ export const register = async (req,res)=> {
         }
         let asunto = "registro en el sistema"
         let mensaje = `<p>informamos que ha sido registrado, enviamos credenciales de ingreso. 
-        <br> <b>Username:</b>${username}</br><b>password:</b>${password} </p>`
+        <br> <b>Username:</b>${username}<b>password:</b>${password} </p>`
         await enviarCorreo(correo,asunto,mensaje)
 
         res.status(201).json({message: "usuario registrado correctamente"})
@@ -63,7 +63,7 @@ export const login= async (req,res) => {
             return res.status(400).json({message: "username o contraseña incorrecta"})
         }
 
-        const token = jwj.sign({id:user.id, rol:user.rol},
+        const token = jwt.sign({id:user.id, rol:user.rol},
             process.env.JWT_SECRET,
             {expiresIn:"1h"}
         )

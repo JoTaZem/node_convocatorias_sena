@@ -1,9 +1,10 @@
 import { DataTypes,Model } from "sequelize";
-import sequelize from "../config/database";
+import sequelize from "../config/database.js";
 
 class Convocatoria extends Model{
     static associate(models){
         this.belongsTo(models.TipoConvocatoria,{foreignKey: "conTipoId", as: "tipo"})
+        this.hasMany(models.Postulacion, {foreignKey:'posConvocatoriaId',as:'postulaciones'})
     }
 }
 

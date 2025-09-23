@@ -1,8 +1,8 @@
-import Postulacion from "../models/postulacion";
-import Aprendiz from "../models/aprendiz";
-import Convocatoria from "../models/convocatoria";
-import Usuario from "../models/usuario";
-import enviarCorreo from "../utils/mailer";
+import Postulacion from "../models/postulacion.js";
+import Aprendiz from "../models/aprendiz.js";
+import Convocatoria from "../models/convocatoria.js";
+import Usuario from "../models/usuario.js";
+import enviarCorreo from "../utils/mailer.js";
 
 export const createPostulacion = async (req, res) => {
     const { posConvocatoriaId } = req.body
@@ -49,9 +49,9 @@ export const createPostulacion = async (req, res) => {
     }
 }
 export const getAllPostulaciones = async (req, res) => {
-    if(req.user.rol !== "Funcionario" && req.user.rol != "Lider"){
+  /*  if(req.user.rol !== "Funcionario" && req.user.rol != "Lider"){
         return res.status(403).json({message: "Acceso denegado"})
-    }
+    }*/
     try {
         const postulaciones = await Postulacion.findAll({
             include:[

@@ -1,6 +1,6 @@
 import { Router } from "express";
-import * as postulacion from "../controllers/postulacionController";
-import authMiddleware from "../middlewares/authMiddleware";
+import * as postulacion from "../controllers/postulacionController.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 const router = Router()
 

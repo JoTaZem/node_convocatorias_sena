@@ -9,7 +9,7 @@ const transporter = createTransport({
     }
 })
 const enviarCorreo = async (to,subject,html)=>{
-    awwait.transporter.sendMail({
+    await transporter.sendMail({
         from: process.env.EMAIL_USER,
         to,
         subject,
